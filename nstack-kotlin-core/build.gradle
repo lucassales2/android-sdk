@@ -1,6 +1,7 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 apply from: 'publish-nstack-kotlin-core.gradle'
+apply plugin: "com.yelp.codegen.plugin"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -11,4 +12,29 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
     implementation 'com.google.code.gson:gson:2.8.5'
     testImplementation "junit:junit:4.12"
+    implementation "com.squareup.moshi:moshi:1.9.2"
+    implementation "com.squareup.moshi:moshi-adapters:1.9.2"
+    implementation "com.squareup.moshi:moshi-kotlin:1.9.2"
+    implementation "com.squareup.retrofit2:retrofit:2.7.1"
+    implementation "com.squareup.retrofit2:converter-moshi:2.7.1"
+    implementation "com.jakewharton.threetenabp:threetenabp:1.2.2"
+
+}
+
+generateSwagger {
+    platform = "kotlin"
+    packageName = "dk.nodes.nstack.kotlin.codegen"
+    specName = "NStack v2"
+    specVersion = "2.0.0"
+    inputFile = file("./nstack_swagger.json")
+    outputDir = file("./src/main/java/")
+    features {
+        headersToRemove = [
+                "Accept-Language",
+                "X-Application-Id",
+                "X-Rest-Api-Key",
+                "Content-Type",
+                "X-Operation-Id"
+        ]
+    }
 }

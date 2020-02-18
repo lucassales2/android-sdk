@@ -24,7 +24,7 @@ buildscript {
         gradlePluginVersion = '3.4.0'
 
         kotlinx_version = '1.3.1'
-        kotlin_version = '1.3.60'
+        kotlin_version = '1.3.61'
         dokkaVersion = '0.9.17'
     }
 
@@ -33,23 +33,26 @@ buildscript {
         jcenter()
         mavenCentral()
         mavenLocal()
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.android.tools.build:gradle:3.5.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "dk.nodes.nstack:translation:3.2.1-beta5"
+        classpath "dk.nodes.nstack:translation:3.2.4"
         classpath 'dk.nodes.ci:bitrise:1.1'
         classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:$dokkaVersion"
         classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.21.1"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.2.1"
         classpath 'digital.wup:android-maven-publish:3.6.2'
+        classpath "com.yelp.codegen:plugin:1.2.0"
     }
 }
 
 plugins {
     id "com.diffplug.gradle.spotless" version "3.23.1"
     id "io.codearte.nexus-staging" version "0.21.0"
+//    id "com.yelp.codegen.plugin" version "1.3.0"
 }
 
 allprojects {
