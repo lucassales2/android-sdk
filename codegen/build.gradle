@@ -31,12 +31,12 @@ openApiValidate {
 }
 
 openApiGenerate {
-    generatorName = "kotlin"
+    generatorName = "swift5"
     inputSpec = "$rootDir/codegen/nstack_openapi3.yaml".toString()
     outputDir = "$rootDir/codegen/src/main/java/".toString()
     invokerPackage = "dk.nodes.nstack.kotlin.codegen"
     apiPackage = "dk.nodes.nstack.kotlin.codegen.api"
-    library = "jvm-retrofit2"
+    library = "alamofire"
     modelPackage = "dk.nodes.nstack.kotlin.codegen.model"
     systemProperties = [
             modelDocs: "false"
