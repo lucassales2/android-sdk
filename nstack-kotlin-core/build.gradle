@@ -26,7 +26,7 @@ generateSwagger {
     packageName = "dk.nodes.nstack.kotlin.codegen"
     specName = "NStack v2"
     specVersion = "2.0.0"
-    inputFile = file("./nstack_swagger.json")
+    inputFile = file("./nstack_openapi3.yaml")
     outputDir = file("./src/main/java/")
     features {
         headersToRemove = [
