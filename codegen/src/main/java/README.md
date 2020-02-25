@@ -2,18 +2,9 @@
 
 ## Requires
 
-* Kotlin 1.3.41
-* Gradle 4.9
+* Kotlin 1.3.50
 
 ## Build
-
-First, create the gradle wrapper script:
-
-```
-gradle wrapper
-```
-
-Then, run:
 
 ```
 ./gradlew check assemble
@@ -26,7 +17,7 @@ This runs all tests and packages the library.
 * Supports JSON inputs/outputs, File inputs, and Form inputs.
 * Supports collection formats for query parameters: csv, tsv, ssv, pipes.
 * Some Kotlin and Java types are fully qualified to avoid conflicts with types defined in OpenAPI definitions.
-* Implementation of ApiClient is intended to reduce method counts, specifically to benefit Android targets.
+
 
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints

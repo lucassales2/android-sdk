@@ -169,8 +169,8 @@ val provider : kotlin.String = provider_example // kotlin.String |
 val key : kotlin.String = key_example // kotlin.String | 
 val type : kotlin.String = type_example // kotlin.String | 
 val succeeded : kotlin.Boolean = true // kotlin.Boolean | 
-val request : kotlin.Any = Object // kotlin.Any | 
-val response : kotlin.Any = Object // kotlin.Any | 
+val request : kotlin.String = Object // kotlin.String | 
+val response : kotlin.String = Object // kotlin.String | 
 val userId : kotlin.Int = 56 // kotlin.Int | 
 try {
     apiInstance.pushLogs(xminusApplicationMinusId, xminusRestMinusApiMinusKey, provider, key, type, succeeded, request, response, userId)
@@ -193,8 +193,8 @@ Name | Type | Description  | Notes
  **key** | **kotlin.String**|  |
  **type** | **kotlin.String**|  |
  **succeeded** | **kotlin.Boolean**|  |
- **request** | **kotlin.Any**|  |
- **response** | **kotlin.Any**|  |
+ **request** | **kotlin.String**|  |
+ **response** | **kotlin.String**|  |
  **userId** | **kotlin.Int**|  |
 
 ### Return type
@@ -231,8 +231,8 @@ val provider : kotlin.String = provider_example // kotlin.String |
 val key : kotlin.String = key_example // kotlin.String | 
 val type : kotlin.String = type_example // kotlin.String | 
 val succeeded : kotlin.Boolean = true // kotlin.Boolean | 
-val request : kotlin.Any = Object // kotlin.Any | 
-val response : kotlin.Any = Object // kotlin.Any | 
+val request : kotlin.String = Object // kotlin.String | 
+val response : kotlin.String = Object // kotlin.String | 
 val userId : kotlin.Int = 56 // kotlin.Int | 
 try {
     apiInstance.pushLogs1(xminusApplicationMinusId, xminusRestMinusApiMinusKey, provider, key, type, succeeded, request, response, userId)
@@ -255,8 +255,8 @@ Name | Type | Description  | Notes
  **key** | **kotlin.String**|  |
  **type** | **kotlin.String**|  |
  **succeeded** | **kotlin.Boolean**|  |
- **request** | **kotlin.Any**|  |
- **response** | **kotlin.Any**|  |
+ **request** | **kotlin.String**|  |
+ **response** | **kotlin.String**|  |
  **userId** | **kotlin.Int**|  |
 
 ### Return type
