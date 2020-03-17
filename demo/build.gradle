@@ -1,5 +1,3 @@
-import dk.nstack.kotlin.plugin.TranslationPlugin
-
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -8,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
-apply plugin: TranslationPlugin
+apply plugin: 'dk.nstack.translation.plugin'
 
 translation {
     appId = "dTyz7mezul3YJliMtsoM3z8ZhmWqDR8kJLbF"

@@ -10,6 +10,8 @@ import org.gradle.api.Project
 class TranslationPlugin implements Plugin<Project> {
 
     public static final String GROUP_NAME = "nstack"
+    public static final String PACKAGE_NAME = "nstack"
+
     public static
     final String JAVA_SOURCE_PATH = "${File.separator}src${File.separator}main${File.separator}java"
     public static final String TRANSLATION_FILE_NAME = "Translation.java"
@@ -91,6 +93,10 @@ class TranslationPlugin implements Plugin<Project> {
         }
     }
 
+    private void generateNStackFolder() {
+
+    }
+
     private void generateTranslationClass() {
         String acceptHeader = project.translation.acceptHeader
 
@@ -129,11 +135,13 @@ class TranslationPlugin implements Plugin<Project> {
 
         searchPath.eachFileRecurse { file ->
             String filePath = file.path
-            if (filePath.toLowerCase().contains(searchName)) {
+            Log.info("filepath " + filePath)
+            if (filePath.toLowerCase().endsWith(searchName)) {
                 Log.debug("Found File -> " + filePath)
                 classFilePath = filePath
             }
         }
+
 
         if (classFilePath == null) {
             throw Exception("Unable to locate translation file")

@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
 apply from: 'publish-nstack-translation-plugin.gradle'
 
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -8,4 +9,16 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
     implementation 'com.android.tools.build:gradle:3.6.1'
+}
+
+group=GROUP
+name=TRANSLATION_ARTIFACT_ID
+version=VERSION_NAME + "-local"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../nstack-plugin'))
+        }
+    }
 }
