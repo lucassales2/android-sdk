@@ -36,7 +36,7 @@ openApiValidate {
 openApiGenerate {
     generatorName = "kotlin"
     inputSpec = "$rootDir/codegen/nstack_openapi3.yaml".toString()
-    outputDir = "$rootDir/codegen/src/main/java/".toString()
+    outputDir = "$rootDir/codegen/".toString()
     invokerPackage = "dk.nodes.nstack.kotlin.codegen"
     apiPackage = "dk.nodes.nstack.kotlin.codegen.api"
     library = "jvm-retrofit2"
