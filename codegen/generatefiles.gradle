@@ -1,0 +1,54 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'org.openapi.generator'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+generateSwagger {
+    platform = "kotlin"
+    packageName = "dk.nodes.nstack.kotlin.codegen"
+    specName = "NStack v2"
+    specVersion = "2.0.0"
+    inputFile = file("./nstack_openapi3.yaml")
+    outputDir = file("./src/main/java/")
+    features {
+        headersToRemove = [
+                "Accept-Language",
+                "X-Application-Id",
+                "X-Rest-Api-Key",
+                "Content-Type",
+                "X-Operation-Id"
+        ]
+    }
+}
+
+openApiMeta {
+    generatorName = "NStack api"
+    packageName = "dk.nodes.nstack.kotlin"
+    outputFolder = "$buildDir/meta".toString()
+}
+
+openApiValidate {
+    inputSpec = "$rootDir/nstack-kotlin-core/nstack_openapi3.yaml".toString()
+}
+
+openApiGenerate {
+    generatorName = "kotlin"
+    inputSpec = "$rootDir/codegen/nstack_openapi3.yaml".toString()
+    outputDir = "$rootDir/codegen/src/main/java/".toString()
+    invokerPackage = "dk.nodes.nstack.kotlin.codegen"
+    apiPackage = "dk.nodes.nstack.kotlin.codegen.api"
+    library = "jvm-retrofit2"
+    modelPackage = "dk.nodes.nstack.kotlin.codegen.model"
+    systemProperties = [
+            modelDocs: "false"
+    ]
+    skipValidateSpec = true
+    logToStderr = true
+    generateAliasAsModel = false
+    // set to true and set environment variable {LANG}_POST_PROCESS_FILE
+    // (e.g. SCALA_POST_PROCESS_FILE) to the linter/formatter to be processed.
+    // This command will be passed one file at a time for most supported post processors.
+    enablePostProcessFile = false
+}
